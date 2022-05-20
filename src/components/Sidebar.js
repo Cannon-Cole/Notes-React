@@ -10,6 +10,12 @@ export default function Sidebar(props) {
         onClick={() => props.setCurrentNoteId(note.id)}
       >
         <h4 className="text-snippet">{get_first_line(note)}</h4>
+        <button
+          className="delete-btn"
+          onClick={(event) => props.deleteFunction(event, note.id)}
+        >
+          <i className="gg-trash trash-icon"></i>
+        </button>
       </div>
     </div>
   ));
@@ -20,7 +26,6 @@ export default function Sidebar(props) {
     while (note.body[count] != "\n" && count < note.body.length) {
       first_line += note.body[count];
       count++;
-      console.log(note.body[count]);
     }
     return first_line;
   }
