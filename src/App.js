@@ -43,7 +43,6 @@ export default function App() {
   }, [notes]);
 
   function store_locally() {
-    console.log(notes);
     localStorage.setItem("notes", JSON.stringify(notes));
   }
   function get_locally() {
